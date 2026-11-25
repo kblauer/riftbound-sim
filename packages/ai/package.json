@@ -1,0 +1,23 @@
+{
+  "name": "@riftbound-sim/ai",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@riftbound-sim/engine": "workspace:*",
+    "comlink": "^4.4.2",
+    "pure-rand": "^8.4.2"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.1"
+  }
+}

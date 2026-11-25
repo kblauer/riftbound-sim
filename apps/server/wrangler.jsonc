@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "riftbound-sim-server",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "durable_objects": {
+    "bindings": [{ "name": "Match", "class_name": "Match" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Match"] }],
+  "vars": {
+    // Comma-separated origins allowed to call the HTTP API and open match sockets.
+    // Override per environment in the Cloudflare dashboard for production.
+    "ALLOWED_ORIGINS": "http://localhost:5173,http://127.0.0.1:5173"
+  },
+  // Secrets (never in this file): SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
+  // Local: copy .dev.vars.example to .dev.vars. Deployed: `wrangler secret put <NAME>`.
+  "observability": { "enabled": true }
+}

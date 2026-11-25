@@ -1,0 +1,4 @@
+# Copy to .dev.vars (git-ignored) for `wrangler dev`.
+# Values for the local Supabase stack are printed by `pnpm exec supabase status`.
+SUPABASE_URL=http://127.0.0.1:54321
+SUPABASE_SERVICE_ROLE_KEY=
